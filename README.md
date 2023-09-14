@@ -42,7 +42,7 @@ def computeCost(X,y,theta):
 
   return 1/(2*m) * np.sum(square_err)  
   
-  data_n=data.values
+data_n=data.values
 m=data_n[:,0].size
 X=np.append(np.ones((m,1)),data_n[:,0].reshape(m,1),axis=1)
 y=data_n[:,1].reshape(m,1)
@@ -63,7 +63,7 @@ def gradientDescent(X,y,theta,alpha,num_iters):
     J_history.append(computeCost(X,y,theta))
 
   return theta, J_history
-  
+
 theta,J_history = gradientDescent(X,y,theta,0.01,1500)
 print("h(x) ="+str(round(theta[0,0],2))+" + "+str(round(theta[1,0],2))+"x1")
 
@@ -86,7 +86,7 @@ def predict(x,theta):
   predictions= np.dot(theta.transpose(),x)
   return predictions[0]
   
- predict1=predict(np.array([1,3.5]),theta)*10000
+predict1=predict(np.array([1,3.5]),theta)*10000
 print("For population = 35,000, we predict a profit of $"+str(round(predict1,0)))
 
 predict2=predict(np.array([1,7]),theta)*10000
